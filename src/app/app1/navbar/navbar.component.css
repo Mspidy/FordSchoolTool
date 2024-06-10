@@ -1,0 +1,130 @@
+.navigation {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: #000080;
+  overflow: scroll;
+  transition: 0.5s;
+}
+
+/* .navigation:hover,
+.navigation.active {
+  width: 200px;
+} */
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  transition: 0.3s;
+}
+
+.navigation ul li:hover {
+  background: #ccc;
+  color: #111;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  height: 60px;
+  padding: 10px;
+}
+
+.navigation ul li a .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  height: 40px;
+}
+
+.navigation ul li a .icon .fa,
+.navigation ul li a .icon img {
+  font-size: 24px;
+  border-radius: 50%;
+}
+
+/* .navigation ul li a .title {
+  display: none;
+  margin-left: 10px;
+  white-space: nowrap;
+} */
+
+/* .navigation:hover ul li a .title {
+  display: inline;
+  color: #111;
+} */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.profile .icon {
+  padding: 0;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile .title {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #074848;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.toggle::before {
+  content: "\f0c9";
+  font-family: FontAwesome;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+.toggle.active::before {
+  content: "\f00d";
+}
+
+@media (max-width: 767px) {
+  .navigation {
+    left: -60px;
+  }
+  .navigation.active {
+    left: 0px;
+    width: 100%;
+  }
+}
+
