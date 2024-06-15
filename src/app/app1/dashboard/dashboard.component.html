@@ -14,18 +14,17 @@
     </div>
     <div>
         <ngx-charts-area-chart [results]="areaChartData" [xAxis]="true" [yAxis]="true" [legend]="true" xAxisLabel="Year"
-            yAxisLabel="Budget" [autoScale]="true" [view]="views" [scheme]="colorScheme"
-            style="display: block; width: 100%; height: 400px;">
+            yAxisLabel="Budget" [autoScale]="true" [view]="views" [scheme]="colorScheme">
         </ngx-charts-area-chart>
     </div>
     <div style="display: flex;width: 100%;">
         <ngx-charts-line-chart [results]="lineChartData" [curve]="customCurve" [animations]="true" [xAxis]="true"
             [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Months"
-            yAxisLabel="Revenue" [view]="view" style="display: block; width: 100%; height: 400px;">
+            yAxisLabel="Revenue" [view]="view">
         </ngx-charts-line-chart>
         <ngx-charts-line-chart [results]="lineChartData" [curve]="customCurve" [animations]="true" [xAxis]="true"
             [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Months"
-            yAxisLabel="Revenue" [view]="view" style="display: block; width: 100%; height: 400px;">
+            yAxisLabel="Revenue" [view]="view">
         </ngx-charts-line-chart>
     </div>
 

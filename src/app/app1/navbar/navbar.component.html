@@ -2,10 +2,10 @@
     <ul>
         <li class="profile">
             <a href="#" style="display: contents;">
-              <span class="icon"><img src="assets/ford3.png" class="profile-pic"></span>
-              <span class="title">Ford English School</span>
+                <span class="icon"><img src="assets/ford3.png" class="profile-pic"></span>
+                <span class="title">Ford English School</span>
             </a>
-          </li>
+        </li>
         <li>
             <a href="home">
                 <span class="icon"><i class="fa-solid fa-house"></i></span>
@@ -18,7 +18,7 @@
                 <span class="title">Dashboard</span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="student-registration">
                 <span class="icon"><i class="fas fa-graduation-cap"></i></span>
                 <span class="title">Student</span>
@@ -29,7 +29,61 @@
                 <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
                 <span class="title">All Student</span>
             </a>
-        </li>
+        </li> -->
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="false" style="background-color: #000080;">
+                <mat-expansion-panel-header style="color: #ffff;">
+                    <mat-panel-title style="color: #ffff; font-size: 12px;">
+                        <i class="fas fa-graduation-cap"></i> &nbsp;&nbsp;Student Details
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <li>
+                    <a href="student-registration">
+                        <span class="icon"><i class="fas fa-user-plus"></i></span>
+                        <span class="title">Student Registeration</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student-list">
+                        <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="title">All Student</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="importStudentData()">
+                        <span class="icon"><i class="fas fa-file-excel"></i></span>
+                        <span class="title">Import Student</span>
+                    </a>
+                </li>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="false" style="background-color: #000080;">
+                <mat-expansion-panel-header style="color: #ffff;">
+                    <mat-panel-title style="color: #ffff; font-size: 12px;">
+                        <i class="fas fa-graduation-cap"></i> &nbsp;&nbsp;Teacher Details
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <li>
+                    <a href="teacher-registration">
+                        <span class="icon"><i class="fas fa-user-plus"></i></span>
+                        <span class="title">Add Teacher</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="teacher-list">
+                        <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="title">All Teacher</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fas fa-file-excel"></i></span>
+                        <span class="title">Import Teacher</span>
+                    </a>
+                </li>
+            </mat-expansion-panel>
+        </mat-accordion>
         <li>
             <a href="student-list">
                 <span class="icon"><i class="fas fa-bus"></i></span>
@@ -49,10 +103,30 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="sign-in">
                 <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                 <span class="title">SignOut</span>
             </a>
         </li>
+
+        
     </ul>
+    <div class="copyright">
+        &copy; 2024 Ford English School
+    </div>
+</div>
+
+<div class="popup-container" *ngIf="openPopupExcel">
+    <div class="popup-overlay"></div>
+    <div class="popup">
+        <span class="close-popup-btn" (click)="closePopup()">&times;</span>
+        <h2>Upload Student Excel File</h2>
+        <form>
+            <div class="form-group">
+                <label for="excelFile">Choose Excel File:</label>
+                <input type="file" id="excelFile" name="excelFile" accept=".xls, .xlsx" required>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
 </div>

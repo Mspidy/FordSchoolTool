@@ -14,7 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AllStudentComponent } from './app1/student/all-student/all-student.component';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -22,6 +22,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { SigninComponent } from './signin/signin.component';
+import { TeacherRegistrationComponent } from './app1/teacher/teacher-registration/teacher-registration.component';
+import { AllTeacherComponent } from './app1/teacher/all-teacher/all-teacher.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     HomeComponent,
     DashboardComponent,
     StudentRegistrationComponent,
-    AllStudentComponent
+    AllStudentComponent,
+    SigninComponent,
+    TeacherRegistrationComponent,
+    AllTeacherComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatIconModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule
   ],
   providers: [
     

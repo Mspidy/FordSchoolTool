@@ -1,0 +1,62 @@
+<div class="banner-container" *ngIf="showBanner">
+    <div class="banner">
+        <!-- <button class="close-btn">&times;</button> -->
+        <h2>Welcome to Our Website!</h2>
+        <p>Discover our latest offerings and services. Stay updated with our news and events.</p>
+        <button class="explore-btn" (click)="closeBanner()">Explore Now</button>
+    </div>
+    <div class="water-flow">मुझे विश्वास है कि प्रति व्यक्ति एक प्रतिभा के साथ पैदा होता है बस हमें ज़रूरत होती है उस प्रतिभा को निखारने की हमें हमेशा कुछ उपयोगी चीज़ों को जानने और सीखने की इच्छा रखनी चाहिए।</div>
+</div>
+<div class="container">
+    <div class="main">
+        <div class="left-side">
+            <h2 class="gradient-text">Welcome to Ford English School</h2>
+            <p>Providing quality education since 2019</p>
+            <p>Join us in shaping young minds for the future!</p>
+            <p>We believe in nurturing talent and fostering an environment where students can thrive academically and
+                personally.</p>
+            <p>Our school emphasizes holistic development, offering a rich curriculum and a supportive community.</p>
+            <p>Explore our programs and see how we can help your child succeed!</p>
+            <p>At English School, we are committed to:</p>
+            <ul style="list-style-type: circle;">
+                <li><strong>Excellence in Education:</strong> Offering a high-quality academic curriculum.</li>
+                <li><strong>Holistic Development:</strong> Fostering creativity, critical thinking, and personal growth.
+                </li>
+                <li><strong>Community Support:</strong> Creating a safe and inclusive environment for all students.</li>
+            </ul>
+            <br>
+            <p style="font-family: cursive;background-color: #ffff00;">Join us today and embark on an educational
+                journey that inspires and prepares your child for the future! <i class="fas fa-chevron-right"></i></p>
+        </div>
+
+        <div class="right-side">
+            <h2>Sign In</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" ngModel required>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <div class="social-media">
+        <a href="mailto:example@gmail.com" target="_blank" class="mail" data-tooltip="Email"><i
+                class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com" target="_blank" class="facebook" data-tooltip="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://www.google.com" target="_blank" class="google" data-tooltip="Gmail"><i
+                class="fab fa-google"></i></a>
+        <a href="https://github.com" target="_blank" class="github" data-tooltip="GitHub"><i
+                class="fab fa-github"></i></a>
+        <a href="https://twitter.com" target="_blank" class="twitter" data-tooltip="twitter"><i
+                class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" class="instagram" data-tooltip="instagram"><i
+                class="fab fa-instagram"></i></a>
+    </div>
+
+</div>

@@ -29,8 +29,10 @@
 }
 
 .navigation ul li:hover {
-  background: #ccc;
+  background: #2b2b8c;
   color: #111;
+  width: auto;
+
 }
 
 .navigation ul li a {
@@ -40,7 +42,7 @@
   text-decoration: none;
   color: #FFFFFF;
   height: 60px;
-  padding: 10px;
+  padding: 2px;
 }
 
 .navigation ul li a .icon {
@@ -118,6 +120,8 @@
   content: "\f00d";
 }
 
+
+
 @media (max-width: 767px) {
   .navigation {
     left: -60px;
@@ -128,3 +132,109 @@
   }
 }
 
+.copyright {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+}
+
+/* Popup container styles */
+.popup-container {
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Button to open popup */
+.open-popup-btn {
+  background-color: #000080;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Popup overlay styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  max-width: 80%;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  display: none;
+}
+
+.popup h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="file"] {
+  width: calc(100% - 22px); /* Adjust for input padding */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.popup button[type="submit"] {
+  background-color: #000080;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Close button */
+.close-popup-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #aaa;
+}
+
+/* Show popup and overlay on button click */
+.open-popup-btn:hover,
+.popup-overlay,
+.popup {
+  display: block;
+}

@@ -1,0 +1,276 @@
+.banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: yellow;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red; /* Example hover effect */
+}
+
+.banner h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.banner p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.banner .explore-btn {
+    background-color: #000080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+.water-flow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px; /* Adjust height of the water flow */
+    background: #ec4802; /* Gradient for water color */
+    animation: waterflow  50s linear infinite; /* Slower animation */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+@keyframes waterflow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.banner .explore-btn:hover {
+    background-color: #003366; /* Darker shade on hover */
+}
+
+
+.container {
+    width: 100%;
+    padding-left: 15%;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #000080, #003366); /* Linear gradient background */
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background: white; /* Background color for the main content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gradient-text {
+    color: #000080;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    padding: 40px;
+}
+
+.left-side {
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+}
+
+.left-side h2 {
+    font-size: 35px;
+    color: #333;
+}
+
+.right-side {
+    background-color: #ffffff; /* White background for the right side */
+}
+
+.right-side h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #000080;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 18%;
+    display: flex;
+    margin-left: 25%;
+    width: 100%;
+    gap: 20px; /* Space between icons */
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a.facebook {
+    color: #4267B2; /* Facebook blue */
+}
+
+.social-media a.google {
+    color: #D44638;/* Google red */
+}
+
+.social-media a.mail {
+    color: #D44638; /* Mail red */
+}
+
+
+.social-media a.github {
+    color: #333; /* GitHub black */
+}
+
+.social-media a.twitter {
+    color: #1DA1F2; /* Twitter blue */
+}
+
+.social-media a.instagram {
+    color: #E4405F; /* Instagram gradient */
+}
+
+.social-media a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 150%; /* Position the tooltip below the icon */
+    left: 5%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 12px;
+}
+
+.social-media a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-media a:hover {
+    color: #cccccc;
+}
+.social-media a:hover {
+    color: #cccccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .left-side {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 5%;
+    }
+
+    .left-side h2, .right-side h2 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .social-media {
+        gap: 10px; /* Reduce space between icons for smaller screens */
+    }
+
+    .social-media a {
+        font-size: 20px; /* Reduce icon size for smaller screens */
+    }
+}

@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
   ];
 
   customCurve = curveLinear;
-  view: [number, number] = [800, 400];
+  view: [number, number] = [800, 300];
 
   areaChartData = [
     {
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
-  views: [number, number] = [1700, 400]; // Viewport dimensions
+  views: [number, number] = [1700, 350]; // Viewport dimensions
 
   colorScheme: Color = {
     name: 'cool', // Specify a name for the color scheme

@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="home-container">
+        <header class="header">
+            <h1>Teacher Registeration Form</h1>
+          </header>
+    </div>
+    <form class="registration-form" [formGroup]="registrationForm">
+        <mat-grid-list cols="3" rowHeight="3:1">
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Father's Name</mat-label>
+              <input matInput formControlName="fatherName" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Mother's Name</mat-label>
+              <input matInput formControlName="motherName" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>PAN Card</mat-label>
+              <input matInput formControlName="panCard" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Aadhar Card</mat-label>
+              <input matInput formControlName="aadharCard" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Mobile Number</mat-label>
+              <input matInput formControlName="fatherAadharCard">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Alternative Mobile Number</mat-label>
+              <input matInput formControlName="fatherAadharCard">
+            </mat-form-field>
+          </mat-grid-tile>
+          
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="dobPicker" formControlName="dob">
+              <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+              <mat-datepicker #dobPicker></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Previous School Name</mat-label>
+              <input matInput formControlName="previousSchoolName">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle formControlName="transportToggle">Transport Yes/No</mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle formControlName="transportToggle" >Graduation complete Yes/No</mat-slide-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle formControlName="transportToggle" >B.Ed complete Yes/No</mat-slide-toggle>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <button mat-raised-button color="primary" [disabled]="registrationForm.invalid">Register</button>
+      </form>
+      
+      
+</div>
