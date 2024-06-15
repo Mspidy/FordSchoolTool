@@ -1,41 +1,69 @@
-.dashboard {
-    display: flex;
+/* Base styles */
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-right: 6%;
+  margin-top: 50px;
+}
+
+.table {
+  flex: 1 1 45%;
+  max-width: 45%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  /* Space below heading */
+}
+
+table {
+  width: 100%;
+  /* Ensure table takes full width of its container */
+  border-collapse: collapse;
+  /* Collapse borders for cleaner look */
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  /* Borders for table cells */
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .details-container {
     flex-direction: column;
-    align-items: center;
+    /* Stack tables vertically on small screens */
+    gap: 10px;
+    /* Reduce space between tables */
   }
-  
-  .line-graph {
-    width: 80%;
-    margin-bottom: 20px;
+
+  .table {
+    flex: 1 1 100%;
+    /* Take full width on small screens */
+    max-width: 100%;
+    /* Full width for smaller screens */
   }
-  
-  .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .box {
-    width: calc(50% - 20px);
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .rounded-chart {
-    border-radius: 10px;
-  }
-  
-  .student-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .student-detail {
-    width: calc(50% - 20px);
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
+}
+
+
+
+
+h1 {
+  text-align: center;
+  font-size: xx-large;
+  font-family: fantasy;
+}
+
+.styled-table thead tr {
+  background-color: #000080;
+  color: #ffffff;
+  text-align: left;
+}

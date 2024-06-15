@@ -50,6 +50,19 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="fill">
+              <mat-label>Mobile Number</mat-label>
+              <input matInput formControlName="fatherAadharCard">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Alternative Mobile Number</mat-label>
+              <input matInput formControlName="fatherAadharCard">
+            </mat-form-field>
+          </mat-grid-tile>
+          
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
               <mat-label>Date of Birth</mat-label>
               <input matInput [matDatepicker]="dobPicker" formControlName="dob">
               <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
@@ -61,6 +74,9 @@
               <mat-label>Previous School Name</mat-label>
               <input matInput formControlName="previousSchoolName">
             </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle formControlName="transportToggle" (change)="toggleChanged()">Transport Yes/No</mat-slide-toggle>
           </mat-grid-tile>
         </mat-grid-list>
         <button mat-raised-button color="primary" [disabled]="registrationForm.invalid">Register</button>

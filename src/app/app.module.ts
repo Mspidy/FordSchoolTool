@@ -17,6 +17,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AllStudentComponent } from './app1/student/all-student/all-student.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -39,8 +44,15 @@ import { AllStudentComponent } from './app1/student/all-student/all-student.comp
     MatButtonModule,
     MatFormFieldModule,
     MatGridListModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    NgxChartsModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,8 +11,7 @@ const routes: Routes = [
   { path:'home', component: HomeComponent},
   { path:'dashboard', component: DashboardComponent},
   { path:'student-registration', component: StudentRegistrationComponent},
-  { path:'student-list', component: AllStudentComponent}
-  // { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path:'student-list', component: AllStudentComponent},
 ];
 
 @NgModule({

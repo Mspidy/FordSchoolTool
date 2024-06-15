@@ -1,3 +1,50 @@
 <div class="container">
-    
+    <div class="table-container">
+        <header class="header">
+            <h1>List of All Student</h1>
+          </header>
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let class of classes" [expanded]="false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Class {{ class.name }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="table-responsive">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Weight</th>
+                    <th>Symbol</th>
+                    <th>Weight</th>
+                    <th>Symbol</th>
+                    <th>Weight</th>
+                    <th>Symbol</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of class.students">
+                    <td data-label="ID">{{student.id}}</td>
+                    <td data-label="Name">{{student.name}}</td>
+                    <td data-label="Weight">{{student.weight}}</td>
+                    <td data-label="Symbol">{{student.symbol}}</td>
+                    <td data-label="Weight">{{student.weight}}</td>
+                    <td data-label="Symbol">{{student.symbol}}</td>
+                    <td data-label="Weight">{{student.weight}}</td>
+                    <td data-label="Symbol">{{student.symbol}}</td>
+                    <td data-label="Actions">
+                      <i class="fa-solid fa-pen" (click)="editElement(student)"></i>
+                      <i class="fa-solid fa-trash" (click)="deleteElement(student)"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      
 </div>
