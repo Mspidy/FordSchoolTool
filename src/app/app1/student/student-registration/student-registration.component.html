@@ -5,7 +5,7 @@
           </header>
     </div>
     <form class="registration-form" [formGroup]="registrationForm">
-        <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-list cols="3" rowHeight="5:1">
           <mat-grid-tile>
             <mat-form-field appearance="fill">
               <mat-label>Name</mat-label>
@@ -38,14 +38,18 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="fill">
-              <mat-label>Father's PAN Card</mat-label>
-              <input matInput formControlName="fatherPanCard">
+              <mat-label>Class</mat-label>
+              <mat-select formControlName="class" required>
+                <mat-option *ngFor="let class of classes" [value]="class">{{ class }}</mat-option>
+              </mat-select>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="fill">
-              <mat-label>Father's Aadhar Card</mat-label>
-              <input matInput formControlName="fatherAadharCard">
+              <mat-label>Section</mat-label>
+              <mat-select formControlName="section" required>
+                <mat-option *ngFor="let section of sections" [value]="section">{{ section }}</mat-option>
+              </mat-select>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
@@ -79,7 +83,9 @@
             <mat-slide-toggle formControlName="transportToggle" (change)="toggleChanged()">Transport Yes/No</mat-slide-toggle>
           </mat-grid-tile>
         </mat-grid-list>
-        <button mat-raised-button color="primary" [disabled]="registrationForm.invalid">Register</button>
+        <div style="margin:10px;">
+          <button mat-raised-button color="primary" [disabled]="registrationForm.invalid">Student Register</button>
+        </div>
       </form>
       
       

@@ -25,6 +25,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SigninComponent } from './signin/signin.component';
 import { TeacherRegistrationComponent } from './app1/teacher/teacher-registration/teacher-registration.component';
 import { AllTeacherComponent } from './app1/teacher/all-teacher/all-teacher.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AllTeacherComponent } from './app1/teacher/all-teacher/all-teacher.comp
     MatSlideToggleModule,
     MatSnackBarModule,
     NgxChartsModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ],
   providers: [
     

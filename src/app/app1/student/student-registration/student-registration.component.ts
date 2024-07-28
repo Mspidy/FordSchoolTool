@@ -10,6 +10,12 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarVerticalPosition } from '@an
 export class StudentRegistrationComponent implements OnInit {
 
   registrationForm!: FormGroup;
+  classes: string[] = [
+    'Nursery', 'LKG','UKG','Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5',
+    'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12'
+  ];
+
+  sections: string[] = ['Section A', 'Section B', 'Section C'];
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) { }
 
@@ -23,6 +29,8 @@ export class StudentRegistrationComponent implements OnInit {
       fatherPanCard: [''],
       fatherAadharCard: [''],
       dob: [''],
+      class: [''],
+      section: [''],
       previousSchoolName: [''],
       transportToggle: [false]
     });
