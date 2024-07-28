@@ -133,13 +133,13 @@
 }
 
 .copyright {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  top: 0;
+  bottom: 0;
+  margin-top: 50px;
 }
 
 /* Popup container styles */
