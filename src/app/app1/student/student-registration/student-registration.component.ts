@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, UntypedFormControl, UntypedFormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
@@ -9,7 +9,7 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarVerticalPosition } from '@an
 })
 export class StudentRegistrationComponent implements OnInit {
 
-  registrationForm!: FormGroup;
+  registrationForm!: UntypedFormGroup;
   isInvalid:boolean=false
   classes: string[] = [
     'Nursery', 'LKG','UKG','Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5',
@@ -21,19 +21,19 @@ export class StudentRegistrationComponent implements OnInit {
   constructor( private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.registrationForm = new FormGroup({
-      name:new FormControl ('', [Validators.required]),
-      fatherName: new FormControl ('', [Validators.required]),
-      motherName: new FormControl ('', [Validators.required]),
-      panCard: new FormControl(''),
-      aadharCard: new FormControl('' ),
-      fatherPanCard: new FormControl(''),
-      fatherAadharCard: new FormControl(''),
-      dob: new FormControl(''),
-      class: new FormControl('',[this.checkValidStudent()]),
-      section: new FormControl(''),
-      previousSchoolName: new FormControl(''),
-      transportToggle: new FormControl(false)
+    this.registrationForm = new UntypedFormGroup({
+      name:new UntypedFormControl ('', [Validators.required]),
+      fatherName: new UntypedFormControl ('', [Validators.required]),
+      motherName: new UntypedFormControl ('', [Validators.required]),
+      panCard: new UntypedFormControl(''),
+      aadharCard: new UntypedFormControl('' ),
+      fatherPanCard: new UntypedFormControl(''),
+      fatherAadharCard: new UntypedFormControl(''),
+      dob: new UntypedFormControl(''),
+      class: new UntypedFormControl('',[this.checkValidStudent()]),
+      section: new UntypedFormControl(''),
+      previousSchoolName: new UntypedFormControl(''),
+      transportToggle: new UntypedFormControl(false)
     });
   }
 
