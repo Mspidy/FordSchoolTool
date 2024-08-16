@@ -1,0 +1,63 @@
+<div class="nav">
+    <app-navbar></app-navbar>
+</div>
+
+
+<div class="container">
+   
+    <div class="main">
+
+        <div class="right-side">
+            <h2>Registration Form</h2>
+            <form [formGroup]="myForm">
+                <div class="form-group">
+                    <label for="username">Username<span class="error-check">*</span></label>
+                    <input formControlName="username" type="text" id="username">
+                    <p class="error-check" *ngIf="(myForm.controls['username']?.value=='' && myForm.controls['username']?.touched) && myForm.controls['username']?.errors!=null">Username can't be empty</p>
+                </div>
+                <div class="form-group">
+                    <label for="username">Email<span class="error-check">*</span></label>
+                    <input formControlName="email" type="text" id="email">
+                    <p class="error-check" *ngIf="(myForm.controls['email']?.value=='' && myForm.controls['email']?.touched)">Email can't be empty</p>
+                    <p class="error-check" *ngIf="myForm.controls['email']?.value!='' && myForm.controls['email']?.errors!=null">Email format is not correct</p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password<span class="error-check">*</span></label>
+                    <input formControlName="password" type="password" id="password">
+                    <p class="error-check" *ngIf="(myForm.controls['password']?.value=='' && myForm.controls['password']?.touched)">Password can't be empty</p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Confirm Password<span class="error-check">*</span></label>
+                    <input formControlName="confirmpassword" type="password" id="confirm-password">
+                    <p class="error-check" *ngIf="(myForm.controls['confirmpassword']?.value=='' && myForm.controls['confirmpassword']?.touched)">Confirm Password can't be empty</p>
+                    <p class="error-check" *ngIf="myForm.controls['confirmpassword']?.value!=myForm.controls['password']?.value && myForm.controls['confirmpassword']?.touched">Password and confirm password do not match</p>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role<span class="error-check">*</span></label>
+                    <select formControlName="role" id="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+                <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="submit" (click)="onSubmit()">Register</button>
+            </form>
+        </div>
+    </div>
+    <!-- <div  *ngIf="signInButtonClicked" class="social-media">
+        <a href="mailto:example@gmail.com" target="_blank" class="mail" data-tooltip="Email"><i
+                class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com" target="_blank" class="facebook" data-tooltip="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://www.google.com" target="_blank" class="google" data-tooltip="Gmail"><i
+                class="fab fa-google"></i></a>
+        <a href="https://github.com" target="_blank" class="github" data-tooltip="GitHub"><i
+                class="fab fa-github"></i></a>
+        <a href="https://twitter.com" target="_blank" class="twitter" data-tooltip="twitter"><i
+                class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" class="instagram" data-tooltip="instagram"><i
+                class="fab fa-instagram"></i></a>
+    </div> -->
+
+</div>

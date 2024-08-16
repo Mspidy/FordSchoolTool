@@ -26,6 +26,23 @@ import { SigninComponent } from './signin/signin.component';
 import { TeacherRegistrationComponent } from './app1/teacher/teacher-registration/teacher-registration.component';
 import { AllTeacherComponent } from './app1/teacher/all-teacher/all-teacher.component';
 import { MatSelectModule } from '@angular/material/select';
+import { StoreModule } from '@ngrx/store';
+import { stateReducer } from './store/app.reducer';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AuthGuard } from './Services/auth.guard';
+import { AuthService } from './Services/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCuRMcOz3cYeNXaQH1CIoLqMKwlzS6MZvw",
+  authDomain: "school-management-system-6ae80.firebaseapp.com",
+  projectId: "school-management-system-6ae80",
+  storageBucket: "school-management-system-6ae80.appspot.com",
+  messagingSenderId: "227717900942",
+  appId: "1:227717900942:web:44cce555db4dcdf56237df"
+};
 
 @NgModule({
   declarations: [
@@ -37,7 +54,8 @@ import { MatSelectModule } from '@angular/material/select';
     AllStudentComponent,
     SigninComponent,
     TeacherRegistrationComponent,
-    AllTeacherComponent
+    AllTeacherComponent,
+    SignUpComponent
     
   ],
   imports: [
@@ -58,10 +76,15 @@ import { MatSelectModule } from '@angular/material/select';
     MatSnackBarModule,
     NgxChartsModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    StoreModule.forRoot({appMessageSelector:stateReducer},{}),
+    ToastrModule.forRoot()
   ],
   providers: [
-    
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
+    AuthGuard,
+  AuthService
   ],
   bootstrap: [AppComponent]
 })
