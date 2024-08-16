@@ -26,6 +26,10 @@ import { SigninComponent } from './signin/signin.component';
 import { TeacherRegistrationComponent } from './app1/teacher/teacher-registration/teacher-registration.component';
 import { AllTeacherComponent } from './app1/teacher/all-teacher/all-teacher.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatSnackBarModule,
     NgxChartsModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   providers: [
     

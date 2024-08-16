@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { curveLinear } from 'd3-shape';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
+import { TeacherService } from '../services/teacher.service';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -99,10 +101,25 @@ export class DashboardComponent implements OnInit {
   // Handle click events on the chart
  
 
-  constructor() {
-  }
+  teachers: any[] = [];
+  totalLength = 0;
+  pageSize = 5;
+  pageEvent!: PageEvent;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(public _tservice: TeacherService) { }
 
   ngOnInit(): void {
+    this.getAllTeachersList()
+  }
+
+  getAllTeachersList(){
+    this._tservice.getAllTeacherDetails().subscribe((res:any)=>{
+      console.log(res)
+      this.teachers = res
+    }, (err)=>{
+      console.log(err)
+    })
   }
 
 }

@@ -74,33 +74,25 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Subject</th>
+                        <th>Graduated</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Replace with your teacher data loop -->
-                    <tr>
-                        <td>101</td>
-                        <td>Mr. Brown</td>
-                        <td>Mathematics</td>
-                    </tr>
-                    <tr>
-                        <td>102</td>
-                        <td>Ms. Davis</td>
-                        <td>Science</td>
-                    </tr>
-                    <tr>
-                        <td>101</td>
-                        <td>Mr. Brown</td>
-                        <td>Mathematics</td>
-                    </tr>
-                    <tr>
-                        <td>102</td>
-                        <td>Ms. Davis</td>
-                        <td>Science</td>
-                    </tr>
+                    <tr *ngFor="let teacher of teachers">
+                        <td data-label="ID">{{teacher.teacher_id}}</td>
+                        <td data-label="Name">{{teacher.teacher_name}}</td>
+                        <td data-label="Subject">{{teacher.subject}}</td>
+                        <td data-label="Graduation Complete">
+                          <mat-slide-toggle [(ngModel)]="teacher.graduation_complete">
+                          </mat-slide-toggle>
+                        </td>
+                      </tr>
+                    
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
+            <mat-paginator [length]="totalLength" [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" (page)="pageEvent = $event"></mat-paginator>
         </div>
     </div>
     &nbsp;

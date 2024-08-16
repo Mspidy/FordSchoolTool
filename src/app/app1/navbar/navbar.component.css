@@ -214,12 +214,14 @@
 
 .popup button[type="submit"] {
   background-color: #000080;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 23px;
 }
 
 /* Close button */
@@ -231,6 +233,41 @@
   font-size: 24px;
   color: #aaa;
 }
+
+.download-template {
+  margin-top: 20px;
+}
+
+.download-btn {
+  background-color: #000080;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Tooltip styles */
+.download-btn:hover::after {
+  content: attr(matTooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 1200;
+}
+
+
+
+
 
 /* Show popup and overlay on button click */
 .open-popup-btn:hover,
