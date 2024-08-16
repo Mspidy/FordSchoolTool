@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
@@ -10,6 +10,7 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarVerticalPosition } from '@an
 export class StudentRegistrationComponent implements OnInit {
 
   registrationForm!: FormGroup;
+  isInvalid:boolean=false
   classes: string[] = [
     'Nursery', 'LKG','UKG','Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5',
     'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12'
@@ -17,27 +18,27 @@ export class StudentRegistrationComponent implements OnInit {
 
   sections: string[] = ['Section A', 'Section B', 'Section C'];
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) { }
+  constructor( private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.registrationForm = this.fb.group({
-      name: ['', Validators.required],
-      fatherName: ['', Validators.required],
-      motherName: ['', Validators.required],
-      panCard: ['', Validators.required],
-      aadharCard: ['', Validators.required],
-      fatherPanCard: [''],
-      fatherAadharCard: [''],
-      dob: [''],
-      class: [''],
-      section: [''],
-      previousSchoolName: [''],
-      transportToggle: [false]
+    this.registrationForm = new FormGroup({
+      name:new FormControl ('', [Validators.required]),
+      fatherName: new FormControl ('', [Validators.required]),
+      motherName: new FormControl ('', [Validators.required]),
+      panCard: new FormControl(''),
+      aadharCard: new FormControl('' ),
+      fatherPanCard: new FormControl(''),
+      fatherAadharCard: new FormControl(''),
+      dob: new FormControl(''),
+      class: new FormControl('',[this.checkValidStudent()]),
+      section: new FormControl(''),
+      previousSchoolName: new FormControl(''),
+      transportToggle: new FormControl(false)
     });
   }
 
   toggleChanged(): void {
-    if (this.registrationForm.get('transportToggle')?.value) {
+    if (this.registrationForm.controls['transportToggle']?.value) {
       const config = new MatSnackBarConfig();
       config.duration = 3000; // Duration in milliseconds
       config.horizontalPosition = 'end'; // Align snackbar to the right
@@ -47,4 +48,24 @@ export class StudentRegistrationComponent implements OnInit {
     }
   }
 
+  checkValidStudent():ValidatorFn{
+    return (control:AbstractControl):ValidationErrors | null=>{
+      let regex = /\d+/g;
+      let checkValue=this.registrationForm?.get('class')?.value.match(regex)
+      if(checkValue>8 && 
+    this.registrationForm?.controls['panCard'].value==''){
+        this.isInvalid=true        
+        return{invalidValue:true}
+      }
+      else {
+        this.isInvalid=false
+        control.setErrors(null)
+        return control.errors
+      }
+    }
+  }
+
+  onSubmit(){
+   console.log(this.registrationForm)
+  }
 }

@@ -27,13 +27,14 @@
           <mat-grid-tile>
             <mat-form-field appearance="fill">
               <mat-label>PAN Card</mat-label>
-              <input matInput formControlName="panCard" required>
+              <input matInput formControlName="panCard">
+              <p style="color: red;" *ngIf="registrationForm.controls['class'].errors!=null && registrationForm.controls['class'].touched">It is required</p>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="fill">
               <mat-label>Aadhar Card</mat-label>
-              <input matInput formControlName="aadharCard" required>
+              <input matInput formControlName="aadharCard">
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
@@ -84,7 +85,7 @@
           </mat-grid-tile>
         </mat-grid-list>
         <div style="margin:10px;">
-          <button mat-raised-button color="primary" [disabled]="registrationForm.invalid">Student Register</button>
+          <button mat-raised-button color="primary" [disabled]="registrationForm.invalid" (click)="onSubmit()">Student Register</button>
         </div>
       </form>
       
