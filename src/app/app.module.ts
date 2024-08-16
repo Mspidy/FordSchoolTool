@@ -30,6 +30,23 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { StoreModule } from '@ngrx/store';
+import { stateReducer } from './store/app.reducer';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AuthGuard } from './Services/auth.guard';
+import { AuthService } from './Services/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCuRMcOz3cYeNXaQH1CIoLqMKwlzS6MZvw",
+  authDomain: "school-management-system-6ae80.firebaseapp.com",
+  projectId: "school-management-system-6ae80",
+  storageBucket: "school-management-system-6ae80.appspot.com",
+  messagingSenderId: "227717900942",
+  appId: "1:227717900942:web:44cce555db4dcdf56237df"
+};
 
 @NgModule({
   declarations: [
@@ -41,7 +58,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AllStudentComponent,
     SigninComponent,
     TeacherRegistrationComponent,
-    AllTeacherComponent
+    AllTeacherComponent,
+    SignUpComponent
     
   ],
   imports: [
@@ -66,10 +84,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTabsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    StoreModule.forRoot({appMessageSelector:stateReducer},{}),
+    ToastrModule.forRoot()
   ],
   providers: [
-    
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
+    AuthGuard,
+  AuthService
   ],
   bootstrap: [AppComponent]
 })

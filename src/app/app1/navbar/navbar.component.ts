@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeacherService } from '../services/teacher.service';
+import { Store } from '@ngrx/store';
+import { setUserData, setUserSignInButtonStatus } from 'src/app/store/app.action';
+import { getUserLoggedInData } from 'src/app/store/app.selector';
+import { AppState } from 'src/app/store/app.store-model';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +16,15 @@ export class NavbarComponent implements OnInit {
   openPopupExcel:boolean=false
   openPopupExcelTeacher:boolean=false
   isLoading = false;
+  
+  isUserLoggedIn!:boolean
 
-  constructor(private router: Router, public _teacher: TeacherService) { }
+  constructor(private _router: Router,private _store:Store<AppState>,public _teacher: TeacherService) { }
 
   ngOnInit(): void {
+    this._store.select(getUserLoggedInData).subscribe(userState=>{
+      if(userState) this.isUserLoggedIn=true
+    })
   }
 
   importStudentData(){
@@ -49,4 +58,12 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  signInClicked(){
+    if(this.isUserLoggedIn)
+    this._store.dispatch(setUserData({userLoggedIn:false}))
+  else{
+      this._store.dispatch(setUserSignInButtonStatus({setButtonClickedStatus:true}))
+  }
+
+  }
 }

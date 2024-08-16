@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -9,9 +9,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TeacherRegistrationComponent implements OnInit {
 
-  registrationForm!: FormGroup;
+  registrationForm!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) { }
+  constructor(private fb: UntypedFormBuilder, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
