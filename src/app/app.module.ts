@@ -33,8 +33,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { StoreModule } from '@ngrx/store';
 import { stateReducer } from './store/app.reducer';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+// import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+// import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AuthGuard } from './Services/auth.guard';
 import { AuthService } from './Services/auth.service';
 import { ToastrModule } from 'ngx-toastr';
@@ -89,8 +89,8 @@ const firebaseConfig = {
     ToastrModule.forRoot()
   ],
   providers: [
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),
+    // provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    // provideFirestore(() => getFirestore()),
     AuthGuard,
   AuthService
   ],
